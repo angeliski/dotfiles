@@ -1,0 +1,12 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.alias: ''
+    
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
