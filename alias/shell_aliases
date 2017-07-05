@@ -1,1 +1,17 @@
+# global alias
 alias c='clear && git status'
+
+
+
+#bluesoft alias
+alias erp='cd ~/workspace/erp'
+
+
+
+#################### FUNCTIONS #########################
+change_base(){
+    cd ~/workspace/change_base
+   python change_base.py $1 $2
+    cd -
+}
+
