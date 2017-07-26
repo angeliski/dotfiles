@@ -1,12 +1,20 @@
 # global alias
 alias c='clear && git status'
-
+alias ebash='subl ~/.alias/shell_aliases'
+alias nova='git checkout -b '
+alias gpo='git push origin '
 
 
 #bluesoft alias
 alias erp='cd ~/workspace/erp'
+alias up='bee dbchange:up'
+alias down='bee dbchange:down'
+alias tags='git-next-tags'
+alias dcreate="bee dbchange:create "
+alias resetd='git reset gulpfile.js erp-legacy/src/test/resources/tec.properties erp-main-parent/bee.properties'
 
 
+PATH="/Users/rogerio/workspace/good-scripts/bin:${PATH}"
 
 #################### FUNCTIONS #########################
 change_base(){
