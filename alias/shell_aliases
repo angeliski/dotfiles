@@ -3,6 +3,7 @@ alias c='clear && git status'
 alias ebash='subl ~/.alias/shell_aliases'
 alias nova='git checkout -b '
 alias gpo='git push origin '
+alias makeshit='git reset HEAD~'
 
 
 #bluesoft alias
