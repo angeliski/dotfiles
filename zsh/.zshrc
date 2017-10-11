@@ -84,10 +84,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export ACCEPTANCE_BROWSER="firefox"
+export ACCEPTANCE_URL="localhost:8080/erp-web"	
+
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export PATH=/opt/maven/bin:$PATH
+export PATH=:~/bin:$PATH
 
-[ -f ~/.alias/shell_aliases ] && source ~/.alias/shell_aliases
+if [ -f ~/.alias/shell_aliases ]; then
+ 	for conf in ~/.alias/* 
+ 		source ${conf}
+fi
+# Variaveis sensiveis ao ambiente, tais como chaves do AWS ou PrivateKeys -- Esse arquivo não é criado automaticamente
+[ -f ~/.sensitive/variables ] && source ~/.sensitive/variables
 
 
 export NVM_DIR="$HOME/.nvm"

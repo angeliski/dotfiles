@@ -5,11 +5,7 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
-    ~/.bashrc: 'bash_loader/.bashrc'
-    ~/.profile: 'bash_loader/.profile'
-    ~/.alias: 'alias/work'
-    ~/.zshrc: 'zsh/.zshrc'
+    ~/.alias/work: 'alias/work/shell_aliases'
     ~/.ssh/config: 'ssh/config'
     
 - shell:

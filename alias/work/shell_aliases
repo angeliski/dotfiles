@@ -1,27 +1,21 @@
-# global alias
-alias c='clear && git status'
-alias ebash='subl ~/.alias/shell_aliases'
-alias server='python -m SimpleHTTPServer '
-
-#git
-alias nova='git checkout -b '
-alias gpo='git push origin '
-alias makeshit='git reset HEAD~'
-alias gc='git checkout '
-
 #bluesoft alias
 alias erp='cd ~/workspace/erp'
 alias up='bee dbchange:up'
 alias down='bee dbchange:down'
 alias tags='git-next-tags'
 alias dcreate="bee dbchange:create "
+alias dvalidate="bee data:validate "
+alias dgenerate="bee data:generate "
 alias resetd='git reset gulpfile.js erp-legacy/src/test/resources/tec.properties erp-main-parent/bee.properties'
+
+
 
 alias beep='/Users/rogerio/workspace/mandrake-bee/roda.sh'
 alias beer='/Users/rogerio/workspace/mandrake-bee/remove.sh'
 
 
 PATH="/Users/rogerio/workspace/good-scripts/bin:${PATH}"
+
 
 #################### FUNCTIONS #########################
 change_base(){
@@ -30,3 +24,9 @@ change_base(){
     cd -
 }
 
+download_finan(){
+	tenant=$1
+	arquivo_key=$2
+	url_finan='http://finan.bluesoft.com.br/${tenant}/arquivo/arquivo.do?action=download&arquivoKey=${arquivo_key}'
+	echo $url_finan
+}

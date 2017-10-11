@@ -1,0 +1,18 @@
+# global alias
+alias c='clear && git status'
+alias ebash='subl ~/.alias/shell_aliases'
+alias server='python -m SimpleHTTPServer '
+alias sensitive='subl ~/.sensitive/variables'
+
+#git
+alias nova='git checkout -b '
+alias gpho='git push origin '
+alias makeshit='git reset HEAD~'
+alias gc='git checkout '
+
+#################### FUNCTIONS #########################
+change_base(){
+    cd ~/workspace/change_base
+   python change_base.py $1 $2
+    cd -
+}
