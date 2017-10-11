@@ -8,10 +8,10 @@
     ~/.dotfiles: ''
     ~/.bashrc: 'bash_loader/.bashrc'
     ~/.profile: 'bash_loader/.profile'
-    ~/.alias: 'alias/work'
+    ~/.alias: 'alias'
     ~/.zshrc: 'zsh/.zshrc'
     ~/.ssh/config: 'ssh/config'
     
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [sh git/work_init.sh, Ajustando autor do git]
+  - [sh git/init.sh, Ajustando autor do git]
