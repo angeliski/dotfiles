@@ -1,0 +1,6 @@
+PATH="/Users/rogerio/workspace/good-scripts/bin:${PATH}"
+
+export ACCEPTANCE_BROWSER="firefox"
+export ACCEPTANCE_URL="localhost:8080/erp-web"	
+
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"

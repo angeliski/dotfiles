@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -84,24 +84,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export ACCEPTANCE_BROWSER="firefox"
-export ACCEPTANCE_URL="localhost:8080/erp-web"	
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export PATH=/opt/maven/bin:$PATH
 export PATH=:~/bin:$PATH
 
+#alias by configuration
 if [ -f ~/.alias/shell_aliases ]; then
  	for conf in ~/.alias/* 
  		source ${conf}
 fi
+
+#exṕorts and paths by configuration
+if [ -f ~/.loaders/shell_loaders ]; then
+ 	for conf in ~/.loaders/* 
+ 		source ${conf}
+fi
+
 # Variaveis sensiveis ao ambiente, tais como chaves do AWS ou PrivateKeys -- Esse arquivo não é criado automaticamente
 [ -f ~/.sensitive/variables ] && source ~/.sensitive/variables
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

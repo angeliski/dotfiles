@@ -1,16 +1,19 @@
 - defaults:
     link:
       relink: true
+    shell:
+      stdin: true
+      stdout: true
 
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
-    ~/.bashrc: 'bash_loader/.bashrc'
-    ~/.profile: 'bash_loader/.profile'
+    ~/.dotfiles: './'
     ~/.alias: 'alias/default'
+    ~/.loaders: 'loaders/default'
     ~/.zshrc: 'zsh/.zshrc'
     
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sh git/default_init.sh, Ajustando autor do git]
+  - [sh new_installation/agnoster-font-install.sh, Instalando powerline/fonts]

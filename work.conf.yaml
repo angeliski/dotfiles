@@ -6,6 +6,7 @@
 
 - link:
     ~/.alias/work: 'alias/work/shell_aliases'
+    ~/.loaders/work: 'loaders/work/shell_loaders'
     ~/.ssh/config: 'ssh/config'
     
 - shell:

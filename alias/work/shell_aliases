@@ -9,13 +9,8 @@ alias dgenerate="bee data:generate "
 alias resetd='git reset gulpfile.js erp-legacy/src/test/resources/tec.properties erp-main-parent/bee.properties'
 
 
-
 alias beep='/Users/rogerio/workspace/mandrake-bee/roda.sh'
 alias beer='/Users/rogerio/workspace/mandrake-bee/remove.sh'
-
-
-PATH="/Users/rogerio/workspace/good-scripts/bin:${PATH}"
-
 
 #################### FUNCTIONS #########################
 change_base(){
