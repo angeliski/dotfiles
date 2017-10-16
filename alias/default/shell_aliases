@@ -3,6 +3,7 @@ alias c='clear && git status'
 alias ebash='subl ~/.alias/shell_aliases'
 alias server='python -m SimpleHTTPServer '
 alias sensitive='subl ~/.sensitive/variables'
+alias reload='source ~/.zshrc'
 
 #git
 alias nova='git checkout -b '
