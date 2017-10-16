@@ -10,6 +10,8 @@ alias nova='git checkout -b '
 alias gpho='git push origin '
 alias makeshit='git reset HEAD~'
 alias gc='git checkout '
+alias gp='git pull '
+alias gph='git push '
 
 #################### FUNCTIONS #########################
 change_base(){
