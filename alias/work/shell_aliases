@@ -25,3 +25,65 @@ download_finan(){
 	url_finan='http://finan.bluesoft.com.br/${tenant}/arquivo/arquivo.do?action=download&arquivoKey=${arquivo_key}'
 	echo $url_finan
 }
+
+finan_bank(){
+	activate_bank
+	connect_finan	
+}
+
+activate_bank(){
+	sed -i.bak 's/tec.finan.on=0/tec.finan.on=1/g' "$ERP_HOME/erp-legacy/src/main/resources/tec.properties"
+	sed -i.bak 's/tec.finan.bank.on=0/tec.finan.bank.on=1/g' "$ERP_HOME/erp-legacy/src/main/resources/tec.properties"
+	rm "$ERP_HOME/erp-legacy/src/main/resources/tec.properties.bak"
+}
+
+connect_finan(){
+
+	echo '
+package br.com.bluesoft.tec.service.financeiro.edi;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import br.com.bluesoft.tec.dao.hibernate.ParametroClienteDao;
+
+@Service
+public class TecFinanService {
+    //TODO - retornado url qualquer para nao dar erro para clientes q nao tem finan. DEBITO TECNICO
+    private static final String FAKE_URL_BANK = "http://localhost:8082/tecfinan-web/remoting/bankService";
+    private static final String FAKE_URL_CARD = "http://localhost:8082/tecfinan-web/remoting/cardsService";
+
+    // Utilizando o ParametroClienteDao pois o ParametroSistemaService , nao funciona com o Spring 4.2.
+    @Autowired
+    private ParametroClienteDao parametroClienteDao;
+
+    public String urlCard() {
+//        String url = parametroClienteDao.obterValor(Parametro.TEC_FINAN_CARDS_HTTPREMOTINGURL.getNome());
+//        return StringUtil.isNotEmpty(url) ? url: FAKE_URL_BANK;
+        return FAKE_URL_CARD;
+    }
+    public String urlBank() {
+//        String url = parametroClienteDao.obterValor(Parametro.TEC_FINAN_BANK_HTTPPORTADDRESS.getNome());
+        return FAKE_URL_BANK;
+    }
+    public boolean isOnLine() {
+        try {
+//            final URL url = new URL(parametroClienteDao.obterValor(Parametro.TEC_FINAN_PING.getNome()));
+            final URL url = new URL("http://localhost:8082/tecfinan-web/");
+            final HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+            huc.setRequestMethod("GET");
+            huc.connect();
+            final int code = huc.getResponseCode();
+            huc.disconnect();
+            return code == 200 || code == 401;
+        } catch (final Exception e) {
+            return false;
+        }
+    }
+}
+	' >  ~/workspace/erp/erp-legacy/src/main/java/br/com/bluesoft/tec/service/financeiro/edi/TecFinanService.java
+	
+}
