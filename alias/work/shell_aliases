@@ -6,8 +6,8 @@ alias tags='git-next-tags'
 alias dcreate="bee dbchange:create "
 alias dvalidate="bee data:validate "
 alias dgenerate="bee data:generate "
-alias resetd='git reset gulpfile.js erp-legacy/src/test/resources/tec.properties erp-main-parent/bee.properties'
-
+alias resetd='git reset gulpfile.js erp-legacy/src/test/resources/tec.properties erp-main-parent/bee.properties erp-legacy/src/main/java/br/com/bluesoft/tec/service/financeiro/edi/TecFinanService.java'
+alias ebashw='subl ~/.alias/work'
 
 alias beep='/Users/rogerio/workspace/mandrake-bee/roda.sh'
 alias beer='/Users/rogerio/workspace/mandrake-bee/remove.sh'
@@ -22,8 +22,8 @@ change_base(){
 download_finan(){
 	tenant=$1
 	arquivo_key=$2
-	url_finan='http://finan.bluesoft.com.br/${tenant}/arquivo/arquivo.do?action=download&arquivoKey=${arquivo_key}'
-	echo $url_finan
+	url_finan="http://finan.bluesoft.com.br/$tenant/arquivo/arquivo.do?action=download&arquivoKey=$arquivo_key"
+	open $url_finan
 }
 
 finan_bank(){

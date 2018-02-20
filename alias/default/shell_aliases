@@ -19,3 +19,6 @@ change_base(){
    python change_base.py $1 $2
     cd -
 }
+
+#remove o alias padrão do ZSH (para o gc - funcionar)
+unalias -- '-'
