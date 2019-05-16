@@ -1,5 +1,6 @@
 #bluesoft alias
 alias erp='cd ~/workspace/erp'
+alias erp-vue='cd ~/workspace/erp/erp-web/src/main/webapp/erp-app-vue/'
 alias up='bee dbchange:up'
 alias down='bee dbchange:down'
 alias tags='git-next-tags'
@@ -11,24 +12,39 @@ alias ebashw='subl ~/.alias/work'
 
 alias beep='/Users/rogerio/workspace/mandrake-bee/roda.sh'
 alias beer='/Users/rogerio/workspace/mandrake-bee/remove.sh'
+alias test='cd ~/workspace/erp/erp-main-parent && mvn test -T2C'
 
 #################### FUNCTIONS #########################
-change_base(){
-    cd ~/workspace/change_base
-   python change_base.py $1 $2
-    cd -
-}
 
-download_finan(){
+download_arq_finan(){
 	tenant=$1
 	arquivo_key=$2
 	url_finan="http://finan.bluesoft.com.br/$tenant/arquivo/arquivo.do?action=download&arquivoKey=$arquivo_key"
 	open $url_finan
 }
 
+download_card_finan(){
+    tenant=$1
+    arquivo_key=$2
+    url_finan="http://finan.bluesoft.com.br/$tenant/arquivo/arquivocard.do?action=download&arquivoKey=$arquivo_key"
+    open $url_finan
+}
+
+
 finan_bank(){
+    create_directories
 	activate_bank
 	connect_finan	
+}
+
+create_directories() { 
+    mkdir -p /tmp/tecfinan/cnab240
+    mkdir -p /tmp/tecfinan/redecard/
+    mkdir -p /tmp/tecfinan/visanet/
+    mkdir -p /tmp/tecfinan/amex/
+    mkdir -p /tmp/tecfinan/global/
+    mkdir -p /tmp/tecfinan/accesstage/
+    mkdir -p /tmp/tecfinan/nexxera/
 }
 
 activate_bank(){

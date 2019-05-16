@@ -6,19 +6,11 @@ alias sensitive='subl ~/.sensitive/variables'
 alias reload='source ~/.zshrc'
 
 #git
-alias nova='git checkout -b '
-alias gpho='git push origin '
 alias makeshit='git reset HEAD~'
-alias gc='git checkout '
-alias gp='git pull '
-alias gph='git push '
 
 #################### FUNCTIONS #########################
-change_base(){
-    cd ~/workspace/change_base
-   python change_base.py $1 $2
-    cd -
-}
 
 #remove o alias padrão do ZSH (para o gc - funcionar)
 unalias -- '-'
+
+alias sensitive='subl ~/.sensitive/variables'
