@@ -4,6 +4,7 @@ alias ebash='subl ~/.alias/shell_aliases'
 alias server='python -m SimpleHTTPServer '
 alias sensitive='subl ~/.sensitive/variables'
 alias reload='source ~/.zshrc'
+alias nodeg='npm list -g --depth 0'
 
 #git
 alias makeshit='git reset HEAD~'
@@ -14,3 +15,9 @@ alias makeshit='git reset HEAD~'
 unalias -- '-'
 
 alias sensitive='subl ~/.sensitive/variables'
+
+
+docker_exec () {
+	echo docker exec -ti $1 /bin/bash
+	docker exec -ti $1 /bin/bash
+}
