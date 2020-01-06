@@ -12,8 +12,10 @@
     ~/.alias: 'alias/default'
     ~/.loaders: 'loaders/default'
     ~/.zshrc: 'zsh/.zshrc'
+    ~/.gitignore_global: 'git/.gitignore_global'
     
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sh git/default_init.sh, Ajustando autor do git]
+  - [sh git config --global core.excludesfile ~/.gitignore_global, Configurando gitignore global]
   - [sh new_installation/agnoster-font-install.sh, Instalando powerline/fonts]

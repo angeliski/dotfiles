@@ -16,8 +16,15 @@ unalias -- '-'
 
 alias sensitive='subl ~/.sensitive/variables'
 
+rt () {	
+	rd-docker e web "bundle exec rspec --options /var/app/.rspec /var/app/$@"
+}
 
 docker_exec () {
 	echo docker exec -ti $1 /bin/bash
 	docker exec -ti $1 /bin/bash
+}
+
+dec () {
+	echo $1 | base64 -d
 }
