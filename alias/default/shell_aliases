@@ -5,6 +5,7 @@ alias server='python -m SimpleHTTPServer '
 alias sensitive='subl ~/.sensitive/variables'
 alias reload='source ~/.zshrc'
 alias nodeg='npm list -g --depth 0'
+alias owner_current "sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
 
 #git
 alias makeshit='git reset HEAD~'
