@@ -21,4 +21,4 @@
   - [sh new_installation/agnoster-font-install.sh, Instalando powerline/fonts]
   - [sh new_installation/terminator.sh, Instalando Terminator]
   - [sh new_installation/zsh.sh, Instalando Zsh]
-  - [sh new_installation/asdf-manager.sh, Instalando ASDF]
+  - [bash new_installation/asdf-manager.sh, Instalando ASDF]
