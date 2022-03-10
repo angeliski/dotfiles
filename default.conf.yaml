@@ -23,3 +23,4 @@
   - [sh new_installation/zsh.sh, Instalando Zsh]
   - [bash new_installation/asdf-manager.sh, Instalando ASDF]
   - [sh new_installation/docker.sh, Instalando Docker]
+  - [sh new_installation/git-secret.sh, Instalando Git Secret]

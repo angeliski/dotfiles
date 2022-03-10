@@ -62,3 +62,5 @@ typings/
 #link simbolico
 alias/default/work
 loaders/default/work
+.gitsecret/keys/random_seed
+!*.secret
