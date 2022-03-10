@@ -3,6 +3,7 @@ alias ebashw='subl ~/.alias/work'
 alias own="sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
 
 alias lint='~/workspace/dotfiles/git/lint.sh'
+alias front-hub="npx @resultadosdigitais/front-hub-cli"
 #################### FUNCTIONS #########################
 
 

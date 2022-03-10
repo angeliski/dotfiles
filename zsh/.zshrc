@@ -127,6 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 . $HOME/.asdf/completions/asdf.bash
 
 export PATH=$PATH:/usr/local/go/bin
-. ~/.asdf/plugins/java/set-java-home.sh
 
-alias front-hub="npx @resultadosdigitais/front-hub-cli"
+if [ -f . ~/.asdf/plugins/java/set-java-home.sh ]; then
+	. ~/.asdf/plugins/java/set-java-home.sh
+fi
