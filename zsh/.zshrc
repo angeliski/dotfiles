@@ -128,6 +128,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 
-if [ -f . ~/.asdf/plugins/java/set-java-home.sh ]; then
+if [ -f ~/.asdf/plugins/java/set-java-home.sh ]; then
 	. ~/.asdf/plugins/java/set-java-home.sh
 fi
