@@ -3,7 +3,10 @@
 # install dependencies https://asdf-vm.com/guide/getting-started.html#_1-install-dependencies
 sudo apt install curl git -y
 
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+if [ ! -e ~/.asdf/asdf.sh ]
+then
+ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+fi
 
 . $HOME/.asdf/asdf.sh
 
