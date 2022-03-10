@@ -2,5 +2,22 @@
 alias ebashw='subl ~/.alias/work'
 alias own="sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
 
-
+alias lint='~/workspace/dotfiles/git/lint.sh'
 #################### FUNCTIONS #########################
+
+
+export LD_LIBRARY_PATH="/usr/local/lib" 
+
+export JFROG_USERNAME=rogerio.angeliski
+export JFROG_PASSWORD=TODO
+export GITHUB_TOKEN=TODO
+
+change_rubygem_credentials() {
+	mv ~/.gem/credentials ~/.gem/credentials_old 
+	mv ~/.gem/rubygems_cred ~/.gem/credentials
+	mv ~/.gem/credentials_old ~/.gem/rubygems_cred
+}
+
+work () {
+	cd ~/workspace
+}
