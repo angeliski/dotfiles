@@ -11,3 +11,4 @@ fi
 asdf info | grep ruby  || asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf info | grep golang  || asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 asdf info | grep java  || asdf plugin-add java https://github.com/halcyon/asdf-java.git
+asdf info | grep nodejs  || asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
