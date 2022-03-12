@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 . $HOME/.asdf/completions/asdf.bash
 
 export PATH=$PATH:/usr/local/go/bin
-. ~/.asdf/plugins/java/set-java-home.sh
 
-alias front-hub="npx @resultadosdigitais/front-hub-cli"
+if [ -f ~/.asdf/plugins/java/set-java-home.sh ]; then
+	. ~/.asdf/plugins/java/set-java-home.sh
+fi

@@ -3,14 +3,11 @@ alias ebashw='subl ~/.alias/work'
 alias own="sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
 
 alias lint='~/workspace/dotfiles/git/lint.sh'
+alias front-hub="npx @resultadosdigitais/front-hub-cli"
 #################### FUNCTIONS #########################
 
 
 export LD_LIBRARY_PATH="/usr/local/lib" 
-
-export JFROG_USERNAME=rogerio.angeliski
-export JFROG_PASSWORD=TODO
-export GITHUB_TOKEN=TODO
 
 change_rubygem_credentials() {
 	mv ~/.gem/credentials ~/.gem/credentials_old 
@@ -21,3 +18,6 @@ change_rubygem_credentials() {
 work () {
 	cd ~/workspace
 }
+
+# Load secrets from other place
+source ~/workspace/dotfiles-secrets/alias/work/secrets

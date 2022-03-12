@@ -12,3 +12,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sh git/work_init.sh, Ajustando autor do git]
+  - [sh git/enable-work-gpg-commit.sh, Ativando commit com chave GPG]
