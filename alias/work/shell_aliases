@@ -9,10 +9,6 @@ alias front-hub="npx @resultadosdigitais/front-hub-cli"
 
 export LD_LIBRARY_PATH="/usr/local/lib" 
 
-export JFROG_USERNAME=rogerio.angeliski
-export JFROG_PASSWORD=TODO
-export GITHUB_TOKEN=TODO
-
 change_rubygem_credentials() {
 	mv ~/.gem/credentials ~/.gem/credentials_old 
 	mv ~/.gem/rubygems_cred ~/.gem/credentials
@@ -22,3 +18,6 @@ change_rubygem_credentials() {
 work () {
 	cd ~/workspace
 }
+
+# Load secrets from other place
+source ~/workspace/dotfiles-secrets/alias/work/secrets
