@@ -1,6 +1,6 @@
 #rd alias
 alias ebashw='subl ~/.alias/work'
-alias own="sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
+alias own="sudo chown -R $(id -u):$(id -g) ./"
 
 alias lint='~/workspace/dotfiles/git/lint.sh'
 alias front-hub="npx @resultadosdigitais/front-hub-cli"
