@@ -2,22 +2,16 @@
 alias ebashw='subl ~/.alias/work'
 alias own="sudo chown -R $(id -u):$(id -g) ./"
 
-alias lint='~/workspace/dotfiles/git/lint.sh'
+alias bs_lint='~/workspace/dotfiles/git/bs_lint.sh'
 alias front-hub="npx @resultadosdigitais/front-hub-cli"
 #################### FUNCTIONS #########################
 
 
-export LD_LIBRARY_PATH="/usr/local/lib" 
-
-change_rubygem_credentials() {
-	mv ~/.gem/credentials ~/.gem/credentials_old 
-	mv ~/.gem/rubygems_cred ~/.gem/credentials
-	mv ~/.gem/credentials_old ~/.gem/rubygems_cred
-}
-
 work () {
 	cd ~/workspace
 }
-
+docker_login () {
+	aws sso login --profile ops && aws ecr get-login-password --profile ops | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY
+}
 # Load secrets from other place
 source ~/workspace/dotfiles-secrets/alias/work/secrets

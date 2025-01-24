@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose)
+plugins=(git docker docker-compose kubectl kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +131,10 @@ export PATH=$PATH:/usr/local/go/bin
 if [ -f ~/.asdf/plugins/java/set-java-home.sh ]; then
 	. ~/.asdf/plugins/java/set-java-home.sh
 fi
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/rogerioangelisk/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+PROMPT='$(kube_ps1)'$PROMPT 
+export GOPATH="$ASDF_DIR/shims"
+export GOROOT="$(go env GOROOT)"
+export GOCACHE=$HOME/go/cache

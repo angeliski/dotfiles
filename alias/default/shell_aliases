@@ -1,7 +1,7 @@
 # global alias
 alias c='clear && git status'
 alias ebash='subl ~/.alias/shell_aliases'
-alias server='python -m SimpleHTTPServer '
+alias server='python -m http.server 3306'
 alias sensitive='subl ~/.sensitive/variables'
 alias reload='source ~/.zshrc'
 alias nodeg='npm list -g --depth 0'
@@ -16,10 +16,8 @@ alias makeshit='git reset HEAD~'
 unalias -- '-'
 
 alias sensitive='subl ~/.sensitive/variables'
+alias gitroot='cd $(git rev-parse --show-toplevel)'
 
-rt () {	
-	rd-docker e web "bundle exec rspec --options /var/app/.rspec /var/app/$@"
-}
 
 docker_exec () {
 	echo docker exec -ti $1 /bin/bash
