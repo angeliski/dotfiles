@@ -14,4 +14,4 @@ docker_login () {
 	aws sso login --profile ops && aws ecr get-login-password --profile ops | docker login --username AWS --password-stdin $AWS_ECR_REGISTRY
 }
 # Load secrets from other place
-source ~/workspace/dotfiles-secrets/alias/work/secrets
+# source ~/workspace/dotfiles-secrets/alias/work/secrets

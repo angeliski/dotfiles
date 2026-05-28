@@ -1,8 +1,8 @@
 # global alias
 alias c='clear && git status'
-alias ebash='subl ~/.alias/shell_aliases'
+alias ebash='code ~/.alias/shell_aliases'
 alias server='python -m http.server 3306'
-alias sensitive='subl ~/.sensitive/variables'
+alias sensitive='code ~/.sensitive/variables'
 alias reload='source ~/.zshrc'
 alias nodeg='npm list -g --depth 0'
 alias owner_current "sudo chown -R rogerio.angeliski:rogerio.angeliski ./"
@@ -15,7 +15,7 @@ alias makeshit='git reset HEAD~'
 #remove o alias padrão do ZSH (para o gc - funcionar)
 unalias -- '-'
 
-alias sensitive='subl ~/.sensitive/variables'
+alias sensitive='code ~/.sensitive/variables'
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 
